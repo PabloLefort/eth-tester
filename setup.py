@@ -32,21 +32,23 @@ extras_require = {
     'py-evm': [
         # Pin py-evm to exact version, until it leaves alpha.
         # EVM is very high velocity and might change API at each alpha.
-        "py-evm==0.2.0a17",
+        "py-evm==0.2.0a18",
     ],
 }
 
 extras_require['dev'] = (
-    extras_require['dev']
-    + extras_require['test']
-    + extras_require['lint']
+    extras_require['dev'] +
+    extras_require['test'] +
+    extras_require['lint']
 )
+# convenience in case someone leaves out the `-`
+extras_require['pyevm'] = extras_require['py-evm']
 
 
 setup(
     name='eth-tester',
     # *IMPORTANT*: Don't manually change the version here. Use the 'bumpversion' utility.
-    version='0.1.0-beta.25',
+    version='0.1.0-beta.26',
     description="""Tools for testing Ethereum applications.""",
     long_description_markdown_filename='README.md',
     author='Piper Merriam',
